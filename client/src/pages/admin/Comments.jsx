@@ -128,8 +128,7 @@ const comments_data = [
     _id: "68076468e32055c94a696cf5",
     blog: demoBlogs[4],
     name: "Peter Lawrence",
-    content:
-      "Honestly, I did not expect this to work, but it totally did. Saved my project!",
+    content:"Honestly, I did not expect this to work, but it totally did. Saved my project!",
     isApproved: true,
     createdAt: "2025-04-22T09:42:00.444Z",
     updatedAt: "2025-04-22T10:24:55.626Z",

@@ -6,14 +6,26 @@ const CommentTableItem = ({ comment, index }) => {
   const BlogDate = new Date(createdAt);
 
   return (
-    <tr className="border-b hover:bg-gray-50 transition">
-      <td className="px-6 py-4">{index}</td>
+    <tr className="border-b hover:bg-gray-50 dark:hover:bg-[#2a2a3f] transition">
+      <td className="px-6 py-4 text-gray-700 dark:text-gray-200">{index}</td>
       <td className="px-6 py-4">
-        <b className="text-gray-600">Blog:</b> {blog.title} <br />
-        <b className="text-gray-600">Name:</b> {name} <br />
-        <b className="text-gray-600">Comment:</b> {content}
+        <div className="flex flex-col justify-start items-start">
+          <p className="text-gray-800 dark:text-gray-200 mb-1">
+            <span className="font-semibold">Blog:</span> {blog.title}
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-1">
+            <span className="font-semibold">Name:</span> {name}
+          </p>
+        </div>
+        <br />
+
+        <p className="text-gray-700 dark:text-gray-400 flex items-start justify-start">
+          <span className="font-semibold mr-2">Comment:</span>
+          <span className="break-words">{content}</span>
+        </p>
       </td>
-      <td className="px-6 py-4 max-sm:hidden">
+
+      <td className="px-6 py-4 max-sm:hidden text-gray-700 dark:text-gray-400">
         {BlogDate.toLocaleDateString()}
       </td>
       <td className="px-6 py-4">

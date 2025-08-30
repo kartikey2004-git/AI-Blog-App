@@ -22,9 +22,12 @@ const navItems = [
   { url: "/admin/comments", title: "Comments", icon: MessageSquare },
 ];
 
-const AppSidebar = () => {
+const AppSidebar = ({ isMobile }) => {
   return (
-    <Sidebar className="h-full w-64 border-r bg-white shadow-lg flex flex-col fixed left-0 top-16">
+    <Sidebar
+      className={`h-full w-64 border-r bg-white shadow-lg flex flex-col z-20
+        ${isMobile ? "fixed top-16 left-0" : "fixed top-16 left-0"}`}
+    >
       <SidebarContent className="flex-1 overflow-y-auto">
         <SidebarGroup>
           <SidebarGroupLabel className="px-6 text-sm font-semibold text-gray-500 uppercase tracking-wider mt-6 mb-6">
@@ -43,10 +46,6 @@ const AppSidebar = () => {
                       transition={{ type: "spring", stiffness: 300 }}
                       className="flex items-center gap-4 rounded-lg px-5 py-3 text-base font-medium text-gray-700 relative group overflow-hidden"
                     >
-                      <motion.div
-                        layoutId="activeIndicator"
-                        className="absolute left-0 top-0 h-full w-1 rounded-r-md opacity-0 transition-opacity"
-                      />
                       <item.icon className="h-6 w-6 text-gray-500 transition-colors" />
                       <span className="text-lg transition-colors">
                         {item.title}
